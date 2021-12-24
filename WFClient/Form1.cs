@@ -40,6 +40,7 @@ namespace WFClient
                 while (msg != null)
                 {
                     listBox1.Items.Add(msg);
+                    if (!(listBox2.Items.Contains(msg.UserName))) { listBox2.Items.Add(msg.UserName); }
                     MessageID++;
                     msg = await API.GetMessageHTTPAsync(MessageID);
                 }
